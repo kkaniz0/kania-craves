@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+:root {
+  /* Kania Craves — Strawberry Milk palette */
+  --strawberry: #f7c6d9;
+  --berry: #e98baa;
+  --cream: #fff8f2;
+  --peach: #f8b98c;
+  --vanilla: #ffe7a8;
+  --matcha: #c9ddb8;
+  --cocoa: #553c45;
+  --lilac: #d9c7e8;
+
+  --bg: var(--cream);
+  --surface: #ffffff;
+  --surface-2: #fff0f5;
+  --surface-3: var(--strawberry);
+  --foreground: var(--cocoa);
+  --muted: #8a6f78;
+  --border: #f3d5e0;
+  --accent: var(--berry);
+  --accent-hover: #d97295;
+  --accent-soft: var(--strawberry);
+  --accent-text: var(--cocoa);
+  --on-accent: var(--cocoa);
+  --highlight: var(--vanilla);
+  --map: var(--matcha);
+  --secondary-accent: var(--peach);
+
+  --shadow-card: 0 2px 0 rgba(85, 60, 69, 0.03), 0 12px 32px rgba(233, 139, 170, 0.12);
+  --shadow-lift: 0 8px 28px rgba(233, 139, 170, 0.18);
+  --radius-card: 1.5rem;
+  --radius-pill: 9999px;
+
+  --font-display: "Outfit", system-ui, sans-serif;
+  --font-sans: "Outfit", system-ui, sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background:
+    radial-gradient(900px 520px at 50% -8%, rgba(247, 198, 217, 0.55) 0%, transparent 60%),
+    radial-gradient(700px 420px at 100% 20%, rgba(255, 231, 168, 0.35) 0%, transparent 55%),
+    radial-gradient(600px 380px at 0% 60%, rgba(201, 221, 184, 0.25) 0%, transparent 50%),
+    var(--bg);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--strawberry) 55%, white);
+  color: var(--cocoa);
+}
+
+.leaflet-container {
+  font-family: var(--font-sans);
+  border-radius: var(--radius-card);
+  z-index: 0;
+}
+
+.label-caps {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.heading-soft {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--cocoa);
+}
+
+.brand-watermark {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  text-transform: lowercase;
+  color: color-mix(in oklab, var(--strawberry) 70%, white);
+  line-height: 0.85;
+  user-select: none;
+  pointer-events: none;
+}
+
+.rhode-card {
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.rhode-tile {
+  border-radius: var(--radius-card);
+  background: var(--strawberry);
+  color: var(--cocoa);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.55s ease-out both;
+}
+
+.animate-fade-up-delay {
+  animation: fade-up 0.6s ease-out 0.1s both;
+}
+
+.animate-float-soft {
+  animation: float-soft 5s ease-in-out infinite;
+}

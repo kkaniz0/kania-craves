@@ -1,0 +1,10 @@
+{
+  "name": "Kania Craves",
+  "short_name": "Kania Craves",
+  "description": "Personal food discovery — wherever you are, eat well.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFF8F2",
+  "theme_color": "#F7C6D9",
+  "icons": []
+}
